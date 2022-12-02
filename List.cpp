@@ -1,4 +1,5 @@
 #include "List.h"
+#include "Person.h"
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -9,8 +10,12 @@ Node::Node(Person a) {
 	this->Next = NULL;
 }
 
-List::List() {
+
+List::List(Node *a) {
+	this->Head->data = a->data;
 	this->Head->Next = this->Tail->Next = NULL;
+	a = this->Head;
+	cout << a->data;
 }
 
 List::List(Node* Head, Node* Tail) {
@@ -19,7 +24,7 @@ List::List(Node* Head, Node* Tail) {
 	this->Tail->data = Tail->data;
 	this->Tail->Next = NULL;
 	while (this->Head != NULL) {
-		cout << this->Head->data;
+		this->Head->data.show();
 		this->Head = this->Head->Next;
 	}
 }
