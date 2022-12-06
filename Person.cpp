@@ -23,7 +23,7 @@ Person::Person(const Person& a) {
 	this->name = a.name;
 	this->age = a.age;
 	this->address = a.address;
-	this->gt = gt;
+	this->gt = a.gt;
 }
 Person::~Person() {
 
@@ -55,4 +55,20 @@ ostream& operator << (ostream& out, const Person& a) {
 	out << "dia chi: " << a.address << endl;
 	(a.gt == 1) ? out << "gioi tinh: Nam" : out << "gioi tinh: Nu" << endl;
 	return out;
+}
+
+string Person::GetName() {
+	return this->name;
+}
+
+int Person::GetAge() {
+	return this->age;
+}
+
+string Person::GetAddress() {
+	return this->address;
+}
+
+bool Person::GetGt() {
+	return this->gt;
 }

@@ -1,19 +1,24 @@
+#include "LopSinhHoat.h"
 #include "Person.h"
-#include "List.h"
+#include "Stack.h"
 #include <iostream>
-#include <iomanip>
 #include <string>
 
 using namespace std;
 
+bool asc(double a, double b) {
+	return a > b;
+}
+
+bool desc(double a, double b) {
+	return a < b;
+}
+
 int main() {
-	Person a;
+	SinhVien a;
 	cin >> a;
-	cout << a << endl;
-	Person b("Nguyen Nhat Minh", 15, "Dien Bien Phu", 1);
-	cout << b;
-	Node* c = new Node(a);
-	Node* d = new Node(b);
-	List e(c, d);
+	Stack b;
+	b.Push(a);
+	
 	return 0;
 }

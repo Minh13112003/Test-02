@@ -3,10 +3,11 @@
 #define Person_H
 #include <string>
 
+
 using namespace std;
 
 class Person {
-private:
+protected:
 	string name;
 	int age;
 	string address;
@@ -17,6 +18,10 @@ public:
 	Person(const Person& );
 	friend istream& operator >> (istream&, Person&);
 	friend ostream& operator << (ostream&,const Person&);
+	string GetName();
+	int GetAge();
+	string GetAddress();
+	bool GetGt();
 	~Person();
 };
 
